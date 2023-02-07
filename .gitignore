@@ -1,0 +1,9 @@
+# Project related
+settings_local.py
+
+# PyCharm
+.idea/
+
+# Mac
+.DS_Store
+._*
