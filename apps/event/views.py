@@ -9,6 +9,13 @@ class EventList(generics.ListCreateAPIView):
     serializer_class = EventSerializer
 
 
+class EventListByCalendar(generics.ListAPIView):
+    serializer_class = EventSerializer
+
+    def get_queryset(self):
+        return Event.objects.filter(calendar__slug=self.kwargs['calendar_slug'])
+
+
 class EventDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
