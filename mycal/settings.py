@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'rest_framework',
     # apps
     'apps.calendar',
+    'apps.client',
     'apps.event',
 ]
 
