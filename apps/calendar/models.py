@@ -1,8 +1,11 @@
+from django.contrib.auth import get_user_model
 from django.db import models
+
+User = get_user_model()
 
 
 class Calendar(models.Model):
-    # TODO add user foreignkey field
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=191, unique=True)
     title = models.CharField(max_length=191)
     # color string values match tailwind color palettes

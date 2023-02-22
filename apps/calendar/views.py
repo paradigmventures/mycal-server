@@ -5,11 +5,15 @@ from apps.calendar.serializers import CalendarSerializer
 
 
 class CalendarList(generics.ListCreateAPIView):
-    queryset = Calendar.objects.all()
     serializer_class = CalendarSerializer
+
+    def get_queryset(self):
+        return Calendar.objects.filter(user=self.request.user)
 
 
 class CalendarDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Calendar.objects.all()
     serializer_class = CalendarSerializer
     lookup_field = 'slug'
+
+    def get_queryset(self):
+        return Calendar.objects.filter(user=self.request.user)

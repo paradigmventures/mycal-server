@@ -5,18 +5,23 @@ from apps.event.serializers import EventSerializer
 
 
 class EventList(generics.ListCreateAPIView):
-    queryset = Event.objects.all()
     serializer_class = EventSerializer
+
+    def get_queryset(self):
+        return Event.objects.filter(calendar__user=self.request.user)
 
 
 class EventListByCalendar(generics.ListAPIView):
     serializer_class = EventSerializer
 
     def get_queryset(self):
-        return Event.objects.filter(calendar__slug=self.kwargs['calendar_slug'])
+        return Event.objects.filter(calendar__user=self.request.user,
+                                    calendar__slug=self.kwargs['calendar_slug'])
 
 
 class EventDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Event.objects.all()
     serializer_class = EventSerializer
     lookup_field = 'uuid'
+
+    def get_queryset(self):
+        return Event.objects.filter(calendar__user=self.request.user)
