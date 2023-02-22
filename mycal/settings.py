@@ -23,8 +23,10 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     # apps
+    'apps.auth',
     'apps.calendar',
     'apps.client',
+    'apps.core',
     'apps.event',
 ]
 
@@ -65,6 +67,13 @@ WSGI_APPLICATION = 'mycal.wsgi.application'
 # Database
 
 DATABASES = {}
+
+
+# Auth
+
+LOGIN_URL = '/login'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 
 # Password validation

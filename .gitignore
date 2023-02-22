@@ -1,5 +1,6 @@
 # Project related
 settings_local.py
+static/
 
 # PyCharm
 .idea/
