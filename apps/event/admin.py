@@ -4,7 +4,7 @@ from apps.event.models import Event
 
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('title', 'start_dt', 'end_dt', 'calendar')
+    list_display = ('title', 'start_date', 'end_date', 'calendar')
     list_filter = ('calendar',)
 
 
