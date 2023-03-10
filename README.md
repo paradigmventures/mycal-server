@@ -199,14 +199,15 @@ STATICFILES_DIRS = [
 ]
 
 
-# NOTE: this loosens cookie transport security, so that cookie data can be sent over http (which dev server runs)
+# NOTE: this loosens cookie transport security, so that cookie data can be sent over http (which the dev server runs),
+        values of True (which are set in settings.py) require cookies to be sent over https
 
 CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
 
 
 # NOTE: 'IsAuthenticatedOrReadOnly' loosens the data access permissions, 
-#       so that mysql-client running on localhost:5173 can do GETs and populate calendar without user auth
+#       so that mycal-client running on localhost:5173 can do GETs and populate calendar without user auth
 #       (POSTs, PUTs, and DELETEs still require user auth, which is available when served from 'my-cal.local')
 
 REST_FRAMEWORK = {
