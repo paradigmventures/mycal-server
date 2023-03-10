@@ -146,7 +146,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
 ]
 
-# NOTE: '/PATH/TO/my-cal.local/mycal-server/static/dist' is so that 'index.html' can be recognized as a template at /app
+# NOTE: '/PATH/TO/my-cal.local/mycal-server/static/dist' is so that 'index.html' can be recognized as a template for the url route /app
 
 TEMPLATES = [
     {
