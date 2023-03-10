@@ -43,7 +43,7 @@ server {
         server_name  my-cal.local;
 
         location /assets/ {
-                alias /PATH/TO/my-cal.local/mycal-client/dist/assets/;
+                alias /PATH/TO/my-cal.local/mycal-server/static/dist/assets/;
         }
 
         location / {
