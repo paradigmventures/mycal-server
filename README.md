@@ -30,7 +30,7 @@ Add the following line
 
 ### Setup nginx
 
-Nginx is used to combine both projects on a single domain, and uses a location alias for the client dist assets so they're available where the client project assumes they'll be.
+Nginx is used to combine both projects in a single domain, and uses a location alias for the client dist assets, so they're available where the client project assumes they'll be, relative to the root domain.
 
 My nginx config folder is located in `/usr/local/etc/nginx/` and contains a subfolder called `servers/` for additional virtualhost config files.
 
