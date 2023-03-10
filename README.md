@@ -301,4 +301,4 @@ Cancel and re-run the dev server to serve up new files:
 (env3) $ ./manage.py runserver
 ```
 
-Also, accessing the client project directly from `http://localhost:5173` should be fine for quick development styling the UI with Vue hot reloading, but for code changes that involve data access/changes between client and server, the above process is required.
+Also, accessing the client project directly from `http://localhost:5173` should be fine for quick development styling the UI with Vite hot reloading, but for code changes that involve data access/updates between client and server, the above process is required so both ends remain in sync.
